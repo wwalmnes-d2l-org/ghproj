@@ -39,10 +39,10 @@ jobs:
           fi
         if: failure()
         env:
-          ISSUE_NUMBER: "24"
+#          ISSUE_NUMBER: "24"
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
       - run: |
           gh issue close "$ISSUE_NUMBER"
         env:
-          ISSUE_NUMBER: "24"
+#          ISSUE_NUMBER: "24"
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
