@@ -32,17 +32,3 @@ jobs:
       - run: ghproj add
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
-      - run: |
-          state=$(gh issue view "$ISSUE_NUMBER" --json state -q .state)
-          if [ "$state" = "CLOSED" ]; then
-            gh issue reopen "$ISSUE_NUMBER" -c "CI failed. $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
-          fi
-        if: failure()
-        env:
-          ISSUE_NUMBER: "24"
-          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
-      - run: |
-          gh issue close "$ISSUE_NUMBER"
-        env:
-          ISSUE_NUMBER: "24"
-          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
