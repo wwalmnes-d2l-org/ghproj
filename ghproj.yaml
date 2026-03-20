@@ -7,7 +7,7 @@ entries:
       archived:false
       owner:wwalmnes-d2l-org
       is:private
-  # owner:aquaproj
+      owner:aquaproj
   # owner:lintnet
     expr: |
       (! Item.Repo.IsFork) &&
