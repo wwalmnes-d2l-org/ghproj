@@ -3,18 +3,18 @@
 entries:
   - query: |
       is:open
-      -project:wwalmnes-d2l-org/1
+      -project:wwalmnes-d2l-org/2
       archived:false
       owner:wwalmnes-d2l-org
-      owner:aquaproj
-      owner:lintnet
-      is:public
+  # owner:aquaproj
+  # owner:lintnet
+  # is:public
     expr: |
       (! Item.Repo.IsFork) &&
       (Item.Title != "Dependency Dashboard") &&
       ! (Item.Repo.Name startsWith "homebrew-") &&
       ! (Item.Repo.Name startsWith "test-")
-    project_id: PVT_kwDOEA845s4BSTcu
+    project_id: PVT_kwDOEA845s4BSTph
     # type: issue, pr
     # title
     # label
