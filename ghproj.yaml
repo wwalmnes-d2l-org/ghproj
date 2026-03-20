@@ -3,7 +3,7 @@
 entries:
   - query: |
       is:open
-      -project:wwalmnes-d2l-org/2
+      -project:wwalmnes-d2l-org/3
       archived:false
       owner:wwalmnes-d2l-org
       is:private
@@ -15,7 +15,7 @@ entries:
       ! (Item.Repo.Name startsWith "homebrew-") &&
       ! (Item.Repo.Name startsWith "test-") &&
       ! (Item.Repo.Name startsWith "ghproj")
-    project_id: PVT_kwDOEA845s4BSTph
+    project_id: PVT_kwDOEA845s4BSTtd
     # type: issue, pr
     # title
     # label
