@@ -11,20 +11,27 @@ jobs:
     permissions:
       issues: write
     steps:
+      - uses: actions/create-github-app-token@v3
+        id: app-token
+        with:
+          # required
+          app-id: ${{ vars.APP_ID }}
+          private-key: ${{ secrets.PRIVATE_KEY }}
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           persist-credentials: false
       - uses: aquaproj/aqua-installer@11dd79b4e498d471a9385aa9fb7f62bb5f52a73c # v4.0.4
         with:
           aqua_version: v2.57.0
+          token: ${{ steps.app-token.outputs.token }}
         env:
-          GITHUB_TOKEN: ${{github.token}}
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
       - run: ghproj -v
         env:
-          GITHUB_TOKEN: ${{github.token}}
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
       - run: ghproj add
         env:
-          GITHUB_TOKEN: ${{secrets.GH_PAT}}
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
       - run: |
           state=$(gh issue view "$ISSUE_NUMBER" --json state -q .state)
           if [ "$state" = "CLOSED" ]; then
@@ -33,9 +40,9 @@ jobs:
         if: failure()
         env:
           ISSUE_NUMBER: "24"
-          GITHUB_TOKEN: ${{github.token}}
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
       - run: |
           gh issue close "$ISSUE_NUMBER"
         env:
           ISSUE_NUMBER: "24"
-          GITHUB_TOKEN: ${{github.token}}
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
