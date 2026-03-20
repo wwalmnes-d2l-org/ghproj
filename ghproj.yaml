@@ -3,11 +3,11 @@
 entries:
   - query: |
       is:open
-      -project:wwalmnes-d2l-org/3
+      -project:wwalmnes-d2l-org/4
       archived:false
       owner:wwalmnes-d2l-org
       is:public
-      owner:aquaproj
+  # owner:aquaproj
   # owner:lintnet
     expr: |
       (! Item.Repo.IsFork) &&
@@ -15,7 +15,7 @@ entries:
       ! (Item.Repo.Name startsWith "homebrew-") &&
       ! (Item.Repo.Name startsWith "test-") &&
       ! (Item.Repo.Name startsWith "ghproj")
-    project_id: PVT_kwDOEA845s4BSTtd
+    project_id: PVT_kwDOEA845s4BST0f
     # type: issue, pr
     # title
     # label
