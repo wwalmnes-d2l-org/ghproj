@@ -6,7 +6,7 @@ entries:
       -project:wwalmnes-d2l-org/3
       archived:false
       owner:wwalmnes-d2l-org
-      is:private
+      is:public
       owner:aquaproj
   # owner:lintnet
     expr: |
