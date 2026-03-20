@@ -3,9 +3,9 @@
 entries:
   - query: |
       is:open
-      -project:suzuki-shunsuke/5
+      -project:wwalmnes-d2l-org/1
       archived:false
-      owner:suzuki-shunsuke
+      owner:wwalmnes-d2l-org
       owner:aquaproj
       owner:lintnet
       is:public
