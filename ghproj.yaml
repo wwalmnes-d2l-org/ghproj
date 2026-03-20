@@ -14,7 +14,7 @@ entries:
       (Item.Title != "Dependency Dashboard") &&
       ! (Item.Repo.Name startsWith "homebrew-") &&
       ! (Item.Repo.Name startsWith "test-")
-    project_id: PVT_kwHOAMtMJ84AQCf4
+    project_id: PVT_kwDOEA845s4BSTcu
     # type: issue, pr
     # title
     # label
