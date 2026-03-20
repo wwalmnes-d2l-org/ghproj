@@ -13,7 +13,8 @@ entries:
       (! Item.Repo.IsFork) &&
       (Item.Title != "Dependency Dashboard") &&
       ! (Item.Repo.Name startsWith "homebrew-") &&
-      ! (Item.Repo.Name startsWith "test-")
+      ! (Item.Repo.Name startsWith "test-") &&
+      ! (Item.Repo.Name startsWith "ghproj")
     project_id: PVT_kwDOEA845s4BSTph
     # type: issue, pr
     # title
