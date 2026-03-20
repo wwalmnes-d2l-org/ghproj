@@ -6,9 +6,9 @@ entries:
       -project:wwalmnes-d2l-org/2
       archived:false
       owner:wwalmnes-d2l-org
+      is:private
   # owner:aquaproj
   # owner:lintnet
-  # is:public
     expr: |
       (! Item.Repo.IsFork) &&
       (Item.Title != "Dependency Dashboard") &&
